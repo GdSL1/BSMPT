@@ -308,16 +308,16 @@ std::vector<double> Class_Potential_RxSM_MS_lagparams::calc_CT() const
   }
 
   // formulae for the counterterm scheme
-  parCT.push_back(List(List())); //dmh;
-  parCT.push_back(List(1)); //dms;
-  parCT.push_back(LinearSolve(List(List()),List(1))[3]); //dLh;
-  parCT.push_back(LinearSolve(List(List()),List(1))[4]); //dLs;
-  parCT.push_back(LinearSolve(List(List()),List(1))[5]); //dLhs;
-  parCT.push_back(LinearSolve(List(List()),List(1))[6]); //dT1;
-  parCT.push_back(LinearSolve(List(List()),List(1))[7]); //dT2;
-  parCT.push_back(LinearSolve(List(List()),List(1))[8]); //dT3;
-  parCT.push_back(LinearSolve(List(List()),List(1))[9]); //dT4;
-  parCT.push_back(LinearSolve(List(List()),List(1))[10]); //dT5;
+  parCT.push_back(0); //dmh;
+  parCT.push_back(0); //dms;
+  parCT.push_back(0); //dLh;
+  parCT.push_back(0); //dLs;
+  parCT.push_back(0); //dLhs;
+  parCT.push_back(0); //dT1;
+  parCT.push_back(0); //dT2;
+  parCT.push_back(0); //dT3;
+  parCT.push_back(0); //dT4;
+  parCT.push_back(0); //dT5;
 
   return parCT;
 }

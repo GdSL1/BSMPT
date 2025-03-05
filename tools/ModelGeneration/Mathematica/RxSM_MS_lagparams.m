@@ -135,47 +135,13 @@ parCT = Join[Table[Symbol["d"<>ToString[p]],{p,par}], Table[Symbol["dT"<>ToStrin
 
 
 (*Define the counterterm potential, =0 in MSb*)
-VCT = 0
-
-
-(*Define the sytem of equation to determine the CTs*)
-nCount=0;
-EqTar={};
-Table[nCount+=1; GL[nCount]=D[VCT,higgsbase[[i]]]/.VEVRep; If[PossibleZeroQ[GL[nCount]],nCount-=1,AppendTo[EqTar,-NCW[i]]],{i,Length[higgsbase]}];
-Table[nCount+=1; GL[nCount]=D[VCT,higgsbase[[i]],higgsbase[[j]]]/.VEVRep; If[PossibleZeroQ[GL[nCount]],nCount-=1,AppendTo[EqTar,-HCW[i,j]]],{i,Length[higgsbase]},{j,i,Length[higgsbase]}];
-EqMatrix = Table[D[GL[i],j],{i,nCount},{j,parCT}];
-Print["EqMatrix rank is ", EqMatrix//MatrixRank]
-EqMatrix//MatrixForm
-Print["EqTar is ", EqTar//TableForm]
-
-
-(*Define the sytem of equation to determine the CTs*)
-SysOriginal = Append[EqMatrix//Transpose,EqTar]//Transpose;
-Print["SysOriginal rank is ", SysOriginal//MatrixRank]
-SysOriginal//MatrixForm
-
-
-(*Find the CW relations that help solve the system*)
-SysOriginal = Append[EqMatrix//Transpose,EqTar]//Transpose;
-Stmp=RowReduce[SysOriginal, ZeroTest -> (! FreeQ[#, HCW[_,_]] || !FreeQ[#,NCW[_]] &)];
-CWRelations =Solve[Select[Stmp,#[[;;-2]]==Table[0,{i,(EqMatrix//Dimensions)[[2]]}]&][[All,-1]]==0,-EqTar][[1]];
-Print["Relations found between the CW 1st and 2nd derivative\n", CWRelations//TableForm]
-
-
-(*Reduce the system of equation so that Mathematica can solve it*)
-SysOriginal = Append[EqMatrix//Transpose,EqTar]//Transpose;
-SysOriginal = (SysOriginal/.CWRelations);
-NewMatrix={SysOriginal[[1]]};
-nCount=1;
-While[MatrixRank[NewMatrix]!=MatrixRank[SysOriginal] && nCount < (Length[SysOriginal] + 1),
-nCount+=1;
-If[MatrixRank[Append[NewMatrix,SysOriginal[[nCount]]]]>MatrixRank[NewMatrix],AppendTo[NewMatrix,SysOriginal[[nCount]]]]]
+VCT = 0;
 
 
 (*Determine the CTs*)
-NullSpaceofCT = NullSpace[NewMatrix[[All,;;-2]]];
+NullSpaceofCT = IdentityMatrix[10];
 NullSpaceofCT = Sum[NullSpaceofCT[[i]]*Subscript[t, i],{i,Length[NullSpaceofCT]}];
-CTs = LinearSolve[NewMatrix[[All,;;-2]],NewMatrix[[All,-1]]];
+CTs = LinearSolve[{Table[0,{i,10}]},{0}]
 CTs += NullSpaceofCT;
 {parCT,Table["\t\[RightArrow]\t",{i,parCT}],CTs}//Transpose//TableForm
 
@@ -185,7 +151,7 @@ CTs += NullSpaceofCT;
 (*We chose the following Subscript[t, i] to match the python and Maple implementation, but any other choice is valid .*)
 
 
-tiChoice = {Subscript[t, 1]->0}
+tiChoice = {Subscript[t, _]->0}
 
 
 (*Fixed CTs*)
@@ -403,6 +369,9 @@ CTCurvatureL4, (*Counterterm scalar curvatures L4 (calculated automatically)*)
 GaugeBasis, (*Gauge fields*)
 LepBase, (*Leptonic fields*)
 baseQuarks] (*Quark fields*)
+
+
+
 
 
 

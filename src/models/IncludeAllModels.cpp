@@ -11,6 +11,9 @@
 #include <BSMPT/models/ClassPotentialOrigin.h> // for Class_Potential_Origin
 #include <BSMPT/models/ClassPotentialR2HDM.h>
 #include <BSMPT/models/ClassPotentialSM.h>
+#include <BSMPT/models/ClassPotentialRxSM_MS_lagparams.h>
+#include <BSMPT/models/ClassPotentialRxSM_OS_lagparams.h>
+#include <BSMPT/models/ClassPotentialRxSM_OS_physparams.h>
 #include <BSMPT/models/IncludeAllModels.h>
 #include <ctype.h>   // for isdigit, tolower
 #include <iostream>  // for operator<<, cerr, ost...
@@ -52,6 +55,15 @@ std::unique_ptr<Class_Potential_Origin> FChoose(ModelIDs choice,
     break;
   case ModelIDs::TEMPLATE:
     return std::make_unique<Class_Template>(smConstants);
+    break;
+  case ModelIDs::RXSM_MS_LAGPARAMS:
+    return std::make_unique<Class_Potential_RxSM_MS_lagparams>(smConstants);
+    break;
+  case ModelIDs::RXSM_OS_LAGPARAMS:
+    return std::make_unique<Class_Potential_RxSM_OS_lagparams>(smConstants);
+    break;
+  case ModelIDs::RXSM_OS_PHYSPARAMS:
+    return std::make_unique<Class_Potential_RxSM_OS_physparams>(smConstants);
     break;
   default: throw std::runtime_error("Invalid model");
   }

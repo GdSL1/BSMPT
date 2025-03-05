@@ -6,7 +6,6 @@
 set(header_path "${BSMPT_SOURCE_DIR}/include/BSMPT/models")
 set(header
     ${header_path}/SMparam.h
-    ${header_path}/ModelTestfunctions.h
     ${header_path}/IncludeAllModels.h
     ${header_path}/ClassPotentialOrigin.h
     ${header_path}/ClassPotentialC2HDM.h
@@ -16,11 +15,13 @@ set(header
     ${header_path}/ClassPotentialSM.h
     ${header_path}/ClassPotentialCPintheDark.h
     # Here you can add your new model
+    ${header_path}/ClassPotentialRxSM_MS_lagparams.h
+    ${header_path}/ClassPotentialRxSM_OS_lagparams.h
+    ${header_path}/ClassPotentialRxSM_OS_physparams.h
     ${header_path}/ClassTemplate.h)
 
 set(src
     SMParam.cpp
-    ModelTestfunctions.cpp
     IncludeAllModels.cpp
     ClassPotentialOrigin.cpp
     ClassPotentialOrigin_deprecated.cpp
@@ -31,11 +32,14 @@ set(src
     ClassPotentialSM.cpp
     ClassPotentialCPintheDark.cpp
     # Here you can add your new model
+    ClassPotentialRxSM_MS_lagparams.cpp
+    ClassPotentialRxSM_OS_lagparams.cpp
+    ClassPotentialRxSM_OS_physparams.cpp
     ClassTemplate.cpp)
 
 add_library(Models ${header} ${src})
-target_link_libraries(Models PUBLIC GSL::gsl Eigen3::Eigen Minimizer
-                                    ThermalFunctions Utility)
+target_link_libraries(Models PUBLIC GSL::gsl Eigen3::Eigen ThermalFunctions
+                                    Utility)
 target_include_directories(Models PUBLIC ${BSMPT_SOURCE_DIR}/include)
 target_compile_features(Models PUBLIC cxx_std_17)
 

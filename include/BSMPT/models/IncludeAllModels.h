@@ -40,6 +40,9 @@ enum class ModelIDs
 
   // Here you start adding your models
   TEMPLATE,
+  RXSM_MS_LAGPARAMS,
+  RXSM_OS_LAGPARAMS,
+  RXSM_OS_PHYSPARAMS,
 
   // DO NOT EDIT the part below
   stop
@@ -57,6 +60,9 @@ const std::unordered_map<std::string, ModelIDs> ModelNames{
     {"sm", ModelIDs::SM},
     {"cpinthedark", ModelIDs::CPINTHEDARK},
     {"template", ModelIDs::TEMPLATE},
+    {"rxsm_ms_lagparams", ModelIDs::RXSM_MS_LAGPARAMS},
+    {"rxsm_os_lagparams", ModelIDs::RXSM_OS_LAGPARAMS},
+    {"rxsm_os_physparams", ModelIDs::RXSM_OS_PHYSPARAMS},
 };
 
 /**

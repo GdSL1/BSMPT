@@ -17,6 +17,11 @@ set(header
     ${header_path}/ClassPotentialSM.h
     ${header_path}/ClassPotentialCPintheDark.h
     # Here you can add your new model
+    ${header_path}/ClassPotentialRxSM_OS_lagparams_nG_ndT.h
+    ${header_path}/ClassPotentialRxSM_MS_lagparams_nG_dT_cts.h
+    ${header_path}/ClassPotentialRxSM_MS_lagparams_nG_dT.h
+    ${header_path}/ClassPotentialRxSM_OS_physparams_nG_ndT.h
+    ${header_path}/ClassPotentialRxSM_MS_physparams_nG_dT_cts.h
     ${header_path}/ClassTemplate.h)
 
 set(src
@@ -31,6 +36,11 @@ set(src
     ClassPotentialSM.cpp
     ClassPotentialCPintheDark.cpp
     # Here you can add your new model
+    ClassPotentialRxSM_OS_lagparams_nG_ndT.cpp
+    ClassPotentialRxSM_MS_lagparams_nG_dT_cts.cpp
+    ClassPotentialRxSM_MS_lagparams_nG_dT.cpp
+    ClassPotentialRxSM_OS_physparams_nG_ndT.cpp
+    ClassPotentialRxSM_MS_physparams_nG_dT_cts.cpp
     ClassTemplate.cpp)
 
 add_library(Models STATIC ${header} ${src})

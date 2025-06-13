@@ -11,6 +11,11 @@
 #include <BSMPT/models/ClassPotentialOrigin.h> // for Class_Potential_Origin
 #include <BSMPT/models/ClassPotentialR2HDM.h>
 #include <BSMPT/models/ClassPotentialSM.h>
+#include <BSMPT/models/ClassPotentialRxSM_OS_lagparams_nG_ndT.h>
+#include <BSMPT/models/ClassPotentialRxSM_MS_lagparams_nG_dT_cts.h>
+#include <BSMPT/models/ClassPotentialRxSM_MS_lagparams_nG_dT.h>
+#include <BSMPT/models/ClassPotentialRxSM_OS_physparams_nG_ndT.h>
+#include <BSMPT/models/ClassPotentialRxSM_MS_physparams_nG_dT_cts.h>
 #include <BSMPT/models/IncludeAllModels.h>
 #include <ctype.h>   // for isdigit, tolower
 #include <iostream>  // for operator<<, cerr, ost...
@@ -52,6 +57,21 @@ std::unique_ptr<Class_Potential_Origin> FChoose(ModelIDs choice,
     break;
   case ModelIDs::TEMPLATE:
     return std::make_unique<Class_Template>(smConstants);
+    break;
+  case ModelIDs::RXSM_OS_LAGPARAMS_NG_NDT:
+    return std::make_unique<Class_Potential_RxSM_OS_lagparams_nG_ndT>(smConstants);
+    break;
+  case ModelIDs::RXSM_MS_LAGPARAMS_NG_DT_CTS:
+    return std::make_unique<Class_Potential_RxSM_MS_lagparams_nG_dT_cts>(smConstants);
+    break;
+  case ModelIDs::RXSM_MS_LAGPARAMS_NG_DT:
+    return std::make_unique<Class_Potential_RxSM_MS_lagparams_nG_dT>(smConstants);
+    break;
+  case ModelIDs::RXSM_OS_PHYSPARAMS_NG_NDT:
+    return std::make_unique<Class_Potential_RxSM_OS_physparams_nG_ndT>(smConstants);
+    break;
+  case ModelIDs::RXSM_MS_PHYSPARAMS_NG_DT_CTS:
+    return std::make_unique<Class_Potential_RxSM_MS_physparams_nG_dT_cts>(smConstants);
     break;
   default: throw std::runtime_error("Invalid model");
   }

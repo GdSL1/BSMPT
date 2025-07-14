@@ -22,6 +22,7 @@ set(header
     ${header_path}/ClassPotentialRxSM_MS_lagparams_nG_dT.h
     ${header_path}/ClassPotentialRxSM_OS_physparams_nG_ndT.h
     ${header_path}/ClassPotentialRxSM_MS_physparams_nG_dT_cts.h
+    ${header_path}/ClassPotentialR2HDMMathematica.h
     ${header_path}/ClassTemplate.h)
 
 set(src
@@ -41,6 +42,7 @@ set(src
     ClassPotentialRxSM_MS_lagparams_nG_dT.cpp
     ClassPotentialRxSM_OS_physparams_nG_ndT.cpp
     ClassPotentialRxSM_MS_physparams_nG_dT_cts.cpp
+    ClassPotentialR2HDMMathematica.cpp
     ClassTemplate.cpp)
 
 add_library(Models STATIC ${header} ${src})

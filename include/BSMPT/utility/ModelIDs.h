@@ -28,6 +28,7 @@ enum class ModelIDs
   RXSM_MS_LAGPARAMS_NG_DT,
   RXSM_OS_PHYSPARAMS_NG_NDT,
   RXSM_MS_PHYSPARAMS_NG_DT_CTS,
+  R2HDMMATHEMATICA,
 
   // DO NOT EDIT the part below
   stop
@@ -50,6 +51,7 @@ const std::unordered_map<std::string, ModelIDs> ModelNames{
     {"rxsm_ms_lagparams_ng_dt", ModelIDs::RXSM_MS_LAGPARAMS_NG_DT},
     {"rxsm_os_physparams_ng_ndt", ModelIDs::RXSM_OS_PHYSPARAMS_NG_NDT},
     {"rxsm_ms_physparams_ng_dt_cts", ModelIDs::RXSM_MS_PHYSPARAMS_NG_DT_CTS},
+    {"r2hdmmathematica", ModelIDs::R2HDMMATHEMATICA},
 };
 
 } // namespace ModelID

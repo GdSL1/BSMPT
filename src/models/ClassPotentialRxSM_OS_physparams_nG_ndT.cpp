@@ -413,6 +413,12 @@ void Class_Potential_RxSM_OS_physparams_nG_ndT::SetCurvatureArrays()
   Curvature_Higgs_L4[1][1][0][0] = 2*Lhs;
   Curvature_Higgs_L4[1][1][1][1] = Ls;
 
+  Curvature_Gauge_G2H2[0][0][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[1][1][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[2][2][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[2][3][0][0] = -(SMConstants.C_g*SMConstants.C_gs);
+  Curvature_Gauge_G2H2[3][2][0][0] = -(SMConstants.C_g*SMConstants.C_gs);
+  Curvature_Gauge_G2H2[3][3][0][0] = pow(SMConstants.C_gs,2);
 
   std::complex<double> V11, V12, V13, V21, V22, V23, V31, V32, V33;
   V11 = SMConstants.C_Vud;

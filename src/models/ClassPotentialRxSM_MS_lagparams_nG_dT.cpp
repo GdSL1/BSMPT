@@ -25,7 +25,7 @@ Class_Potential_RxSM_MS_lagparams_nG_dT::Class_Potential_RxSM_MS_lagparams_nG_dT
 {
   Model         = ModelID::ModelIDs::RXSM_MS_LAGPARAMS_NG_DT;
 
-  nPar = 5;   // number of parameters in the tree-Level Lagrangian AFTER using
+  nPar = 6;   // number of parameters in the tree-Level Lagrangian AFTER using
                // tadpole equations
   nParCT = 7; // number of parameters in the counterterm potential
 
@@ -153,7 +153,7 @@ void Class_Potential_RxSM_MS_lagparams_nG_dT::ReadAndSet(const std::string &line
     ss >> tmp;
   }
 
-  for (int k = 1; k <= 5; k++)
+  for (int k = 1; k <= 6; k++)
   {
     ss >> tmp;
     if (k == 1)
@@ -166,6 +166,8 @@ void Class_Potential_RxSM_MS_lagparams_nG_dT::ReadAndSet(const std::string &line
       par[3] = tmp; // vh
     if (k == 5)
       par[4] = tmp; // vs
+    if (k == 6)
+      par[5] = tmp; // mu
 
   }
 
@@ -188,7 +190,7 @@ void Class_Potential_RxSM_MS_lagparams_nG_dT::set_gen(const std::vector<double> 
   mh = (Lh*pow(vh,2))/6. + Lhs*pow(vs,2); 
   ms = Lhs*pow(vh,2) + (Ls*pow(vs,2))/6.; 
 
-  scale = SMConstants.C_vev0; // renormalisation scale is set to the SM VEV
+  scale = par[5]; // renormalisation scale is given as input
 
   vevTreeMin.resize(nVEV);
   vevTree.resize(NHiggs);
@@ -410,6 +412,12 @@ void Class_Potential_RxSM_MS_lagparams_nG_dT::SetCurvatureArrays()
   Curvature_Higgs_L4[1][1][0][0] = 2*Lhs;
   Curvature_Higgs_L4[1][1][1][1] = Ls;
 
+  Curvature_Gauge_G2H2[0][0][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[1][1][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[2][2][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[2][3][0][0] = -(SMConstants.C_g*SMConstants.C_gs);
+  Curvature_Gauge_G2H2[3][2][0][0] = -(SMConstants.C_g*SMConstants.C_gs);
+  Curvature_Gauge_G2H2[3][3][0][0] = pow(SMConstants.C_gs,2);
 
   std::complex<double> V11, V12, V13, V21, V22, V23, V31, V32, V33;
   V11 = SMConstants.C_Vud;

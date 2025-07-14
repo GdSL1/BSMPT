@@ -256,11 +256,11 @@ GaugeBasis={Subscript[W, 1],Subscript[W, 2],Subscript[W, 3],Subscript[B, 0]}
 
 (*Define the covariant derivative*)
 Subscript[D, \[Mu]]= -I Subscript[C, g]/2 Sum[Subscript[W, i]PauliMatrix[i],{i,3}] -I Subscript[C, gs]/2 Subscript[B, 0] IdentityMatrix[2];
-Subscript[D, \[Mu]]//MatrixForm
+Subscript[D,\[Mu]]//MatrixForm
 
 
 (*Define the gauge potential*)
-Vgauge = (Conjugate[(Subscript[D, \[Mu]] . {{0,0},{0,Phih[[1]]}})] . (Subscript[D, \[Mu]] . {{0,0},{0,Phih[[1]]}}) )//ComplexExpand//Simplify
+Vgauge = (Conjugate[(Subscript[D, \[Mu]] . {0,Phih[[1]]})] . (Subscript[D, \[Mu]] . {0,Phih[[1]]}) )//ComplexExpand//Simplify
 
 
 (* ::Section:: *)

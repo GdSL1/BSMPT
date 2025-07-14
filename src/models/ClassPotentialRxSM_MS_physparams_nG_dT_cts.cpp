@@ -25,7 +25,7 @@ Class_Potential_RxSM_MS_physparams_nG_dT_cts::Class_Potential_RxSM_MS_physparams
 {
   Model         = ModelID::ModelIDs::RXSM_MS_PHYSPARAMS_NG_DT_CTS;
 
-  nPar = 8;   // number of parameters in the tree-Level Lagrangian AFTER using
+  nPar = 9;   // number of parameters in the tree-Level Lagrangian AFTER using
                // tadpole equations
   nParCT = 10; // number of parameters in the counterterm potential
 
@@ -442,6 +442,12 @@ void Class_Potential_RxSM_MS_physparams_nG_dT_cts::SetCurvatureArrays()
   Curvature_Higgs_L4[1][1][0][0] = 2*(dLhsOS + Lhs);
   Curvature_Higgs_L4[1][1][1][1] = dLsOS + Ls;
 
+  Curvature_Gauge_G2H2[0][0][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[1][1][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[2][2][0][0] = pow(SMConstants.C_g,2);
+  Curvature_Gauge_G2H2[2][3][0][0] = -(SMConstants.C_g*SMConstants.C_gs);
+  Curvature_Gauge_G2H2[3][2][0][0] = -(SMConstants.C_g*SMConstants.C_gs);
+  Curvature_Gauge_G2H2[3][3][0][0] = pow(SMConstants.C_gs,2);
 
   std::complex<double> V11, V12, V13, V21, V22, V23, V31, V32, V33;
   V11 = SMConstants.C_Vud;

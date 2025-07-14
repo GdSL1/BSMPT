@@ -227,7 +227,7 @@ Subscript[D, \[Mu]]//MatrixForm
 
 
 (*Define the gauge potential*)
-Vgauge = (Conjugate[(Subscript[D, \[Mu]] . {{0,0},{0,Phih[[1]]}})] . (Subscript[D, \[Mu]] . {{0,0},{0,Phih[[1]]}}) )//ComplexExpand//Simplify
+Vgauge = (Conjugate[(Subscript[D, \[Mu]] . {0,Phih[[1]]})] . (Subscript[D, \[Mu]] . {0,Phih[[1]]}) )//ComplexExpand//Simplify
 
 
 (* ::Section:: *)
@@ -369,8 +369,6 @@ CTCurvatureL4, (*Counterterm scalar curvatures L4 (calculated automatically)*)
 GaugeBasis, (*Gauge fields*)
 LepBase, (*Leptonic fields*)
 baseQuarks] (*Quark fields*)
-
-
 
 
 

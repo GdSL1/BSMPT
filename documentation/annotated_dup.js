@@ -41,6 +41,7 @@ var annotated_dup =
         [ "Class_Potential_CPintheDark", "classBSMPT_1_1Models_1_1Class__Potential__CPintheDark.html", "classBSMPT_1_1Models_1_1Class__Potential__CPintheDark" ],
         [ "Class_Potential_N2HDM", "classBSMPT_1_1Models_1_1Class__Potential__N2HDM.html", "classBSMPT_1_1Models_1_1Class__Potential__N2HDM" ],
         [ "Class_Potential_R2HDM", "classBSMPT_1_1Models_1_1Class__Potential__R2HDM.html", "classBSMPT_1_1Models_1_1Class__Potential__R2HDM" ],
+        [ "Class_Potential_R2HDMMathematica", "classBSMPT_1_1Models_1_1Class__Potential__R2HDMMathematica.html", "classBSMPT_1_1Models_1_1Class__Potential__R2HDMMathematica" ],
         [ "Class_Potential_RxSM_MS_lagparams_nG_dT", "classBSMPT_1_1Models_1_1Class__Potential__RxSM__MS__lagparams__nG__dT.html", "classBSMPT_1_1Models_1_1Class__Potential__RxSM__MS__lagparams__nG__dT" ],
         [ "Class_Potential_RxSM_MS_lagparams_nG_dT_cts", "classBSMPT_1_1Models_1_1Class__Potential__RxSM__MS__lagparams__nG__dT__cts.html", "classBSMPT_1_1Models_1_1Class__Potential__RxSM__MS__lagparams__nG__dT__cts" ],
         [ "Class_Potential_RxSM_MS_physparams_nG_dT_cts", "classBSMPT_1_1Models_1_1Class__Potential__RxSM__MS__physparams__nG__dT__cts.html", "classBSMPT_1_1Models_1_1Class__Potential__RxSM__MS__physparams__nG__dT__cts" ],

@@ -7,6 +7,7 @@ var dir_bb8717ff0746bf0bf107fee8a4e4f2a9 =
     [ "ClassPotentialN2HDM.h", "ClassPotentialN2HDM_8h.html", "ClassPotentialN2HDM_8h" ],
     [ "ClassPotentialOrigin.h", "ClassPotentialOrigin_8h.html", "ClassPotentialOrigin_8h" ],
     [ "ClassPotentialR2HDM.h", "ClassPotentialR2HDM_8h_source.html", null ],
+    [ "ClassPotentialR2HDMMathematica.h", "ClassPotentialR2HDMMathematica_8h_source.html", null ],
     [ "ClassPotentialRxSM_MS_lagparams_nG_dT.h", "ClassPotentialRxSM__MS__lagparams__nG__dT_8h_source.html", null ],
     [ "ClassPotentialRxSM_MS_lagparams_nG_dT_cts.h", "ClassPotentialRxSM__MS__lagparams__nG__dT__cts_8h_source.html", null ],
     [ "ClassPotentialRxSM_MS_physparams_nG_dT_cts.h", "ClassPotentialRxSM__MS__physparams__nG__dT__cts_8h_source.html", null ],
